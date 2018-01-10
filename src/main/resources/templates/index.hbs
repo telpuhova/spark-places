@@ -1,0 +1,22 @@
+{{#partial "content"}}
+<p>places:</p>
+
+{{#if places}}
+<ul>
+{{#each places }}
+    <li>
+        <p>{{ name }}</p>
+        <p>{{ date }}</p>
+    </li>
+    <a href=""
+    <hr>
+{{/each}}
+</ul>
+{{else}}
+<p>empty</p>
+{{/if}}
+
+<a href="/form">add a place</a>
+{{/partial}}
+
+{{> layout.hbs}}
