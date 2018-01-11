@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Place {
     private String name;
     private String date;
-//    private int id;
+    private int id;
     private static ArrayList<Place> instances = new ArrayList<Place>();
 
     public Place(String name) {
         this.name = name;
         instances.add(this);
-//        this.id = instances.size();
+        this.id = instances.size();
     }
 
     public String getName() {
@@ -21,6 +21,10 @@ public class Place {
 
     public String getDate() {
         return date;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setDate(String date) {
@@ -33,5 +37,9 @@ public class Place {
 
     public static void clearAll() {
         instances.clear();
+    }
+
+    public static Place getElementById(int id) {
+        return instances.get(id-1);
     }
 }

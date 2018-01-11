@@ -45,5 +45,17 @@ public class App {
 
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+        get("/places/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+
+            String id = req.params("id");
+
+            Place place = Place.getElementById(Integer.parseInt(id));
+            model.put("place", place);
+
+            return new ModelAndView(model, "place.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
